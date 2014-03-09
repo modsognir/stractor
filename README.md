@@ -2,6 +2,22 @@
 
 Extracts structured data from given text based on a given template.
 
+
+## Installation
+
+Add this line to your application's Gemfile:
+
+    gem 'stractor'
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install stractor
+
+## Usage
 ## Templates
 Templates are defined by replacing the desired structured text with liquid-style tags.
 
@@ -41,8 +57,11 @@ Templates are defined by replacing the desired structured text with liquid-style
     {{ additional_info }}
 
 
-### Parsed Data
-MatchData object, can be accessed roughly like a Hash with the following structure
+### Parsing
+
+    Stractor.parse(content, template)
+
+Parses to a MatchData object, can be accessed roughly like a Hash with the following structure
     
     {
       problem: 'PROBLEM',
@@ -54,23 +73,6 @@ MatchData object, can be accessed roughly like a Hash with the following structu
       additional_info: 'CHECK_NRPE: Socket timeout after 10 seconds.'
     }
 
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'stractor'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install stractor
-
-## Usage
-
-TODO: Write usage instructions here
 
 ## Contributing
 
