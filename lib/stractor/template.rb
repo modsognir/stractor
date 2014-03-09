@@ -5,7 +5,7 @@ module Stractor
     end
 
     def content
-      @content.gsub(/({{(.*?)}})/) do |match|
+      Regexp.escape(@content.gsub(/\{\{ | \}\}/, '%%stractortag%%')).gsub(/(%%stractortag%%(.*?)%%stractortag%%)/) do |match|
         "(?<#{variable_name_from(match)}>.*?)"
       end
     end
@@ -21,7 +21,7 @@ module Stractor
   private
 
     def variable_name_from(match)
-      match.gsub(/\{|\}|\s/, '').strip.chomp
+      match.gsub(/%%stractortag%%|\s/, '').strip.chomp
     end
   end
 end

@@ -7,7 +7,7 @@ module Stractor
         let(:template) { "test {{ match }} test" }
 
         it 'sets up the correct regex' do
-          expect(Template.new(template).to_regexp).to eql(/test (?<match>.*?) test/)
+          expect(Template.new(template).to_regexp).to eql(/test\ (?<match>.*?)\ test/)
         end
       end
     end
