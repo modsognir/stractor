@@ -1,5 +1,7 @@
 # Stractor
 
+NB: this is currently a giant hack
+
 Extracts structured data from given text based on a given template.
 
 
